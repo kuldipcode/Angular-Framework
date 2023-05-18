@@ -4,3 +4,5 @@
 1. Node: 18.10.0
 1. Package Manager: npm 8.19.2
 1. OS: win32 x64
+
+### cd my-app && ng serve --open
