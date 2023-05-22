@@ -1,0 +1,18 @@
+<div> 
+    <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)" > 
+        <input type="text" name="firstname" placeholder="firstname" 
+          formControlName = "user"> 
+          <input type="text" name="lastname" placeholder="lastname"
+          formControlName = "user"> 
+          <input type="text" name="email" placeholder="email"
+          formControlName = "user"> 
+          <input type="text" name="profileimage" placeholder="profileimage"
+          formControlName = "user"> 
+          <input type="text" name="password" placeholder="password"
+          formControlName = "user"> 
+       <br/>
+       <br/>
+       <input type="submit"  value="Click here"> 
+    </form>
+ </div> 
+ <p> Textbox result is: {{user}} </p>
