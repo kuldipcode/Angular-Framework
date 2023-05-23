@@ -1,0 +1,14 @@
+form {
+    background-color: blue;
+    margin: 5%;
+    padding: 10%;
+} 
+
+button {
+    color: azure;
+    background-color: black;
+}
+
+label {
+    color: gray;
+}

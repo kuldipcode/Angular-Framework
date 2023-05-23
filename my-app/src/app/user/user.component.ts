@@ -11,8 +11,8 @@ export class UserComponent implements OnInit{
   formdata:any;
   ngOnInit() {
     this.formdata = new FormGroup({ 
-      user: new FormControl("Tutorialspoint")
+      user: new FormControl("user")
    }); 
   }
-  onClickSubmit(data:any) {this.user = data.user;}
+  onClickSubmit(data:any) {this.user = data.user; console.log(data)}
 }
