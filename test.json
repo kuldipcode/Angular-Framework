@@ -1,0 +1,23 @@
+{
+    "message": "success",
+    "statusCode": "200"
+}
+
+{
+    "email": "",
+    "password": ""
+}
+
+      
+{
+    "success": true,
+    "message": [
+      {
+        "_id": "646de447d8dcdcb7856eac98",
+        "firstname": "Kuldipkumar",
+        "lastname": "Prajapati",
+        "email": "kuldip.code@gmail.com",
+        "profileimage": "user.jpg"
+      }
+    ]
+  }

@@ -28,11 +28,11 @@ export class UserComponent implements OnInit {
 }
   ngOnInit() {
     this.formdata = new FormGroup({
-      firstname: new FormControl("user"),
-      lastname: new FormControl("user"),
-      email: new FormControl("user"),
-      profileimage: new FormControl("user"),
-      password: new FormControl("user"),
+      firstname: new FormControl("Kuldipkumar"),
+      lastname: new FormControl("Prajapati"),
+      email: new FormControl("kuldip.code@gmail.com"),
+      profileimage: new FormControl("user.jpg"),
+      password: new FormControl("temp"),
     });
   }
   onClickSubmit(data: any) {
