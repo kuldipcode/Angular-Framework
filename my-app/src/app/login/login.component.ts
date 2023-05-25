@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +13,11 @@ export class LoginComponent implements OnInit {
   email: string;
   password:string;
   private user = {};
+  private router: Router;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { 
+   
+  }
 
   formdata: any;
   resdata:any;
@@ -39,6 +43,7 @@ export class LoginComponent implements OnInit {
       res => {
         this.resdata = res;
         console.log(res);
+        this.router.navigate(['/user']);
       }
 );
 }
