@@ -1,5 +1,5 @@
 <div>
-    <form class="containe" class="form-group" [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+    <form class="container" class="form-group" [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
        <label for="em">Email: </label>
        <input type="text" name="email" placeholder="email" formControlName="email" class="form-control">
        <label for="pw">Password </label>
@@ -9,4 +9,5 @@
        <button type="submit" class="btn btn-default">Submit</button>
     </form>
  </div>
- <p> Textbox result is: {{formdata.value}} </p>
+ <div>{{resdata.token}}</div>
+ 

@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   formdata: any;
+  resdata:any;
   private Url = 'http://localhost:3000/api/user/login';
   private httpOptions = {
      headers: new HttpHeaders( { 'Content-Type': 'application/json' })
@@ -36,6 +37,7 @@ export class LoginComponent implements OnInit {
     console.log(data);
     this.sendPostRequest(data).subscribe(
       res => {
+        this.resdata = res;
         console.log(res);
       }
 );

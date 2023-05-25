@@ -1,1 +1,24 @@
-<p>profile works!</p>
+<div class="contaner mt-5" >
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">firstname</th>
+                <th scope="col">lastname</th>
+                <th scope="col">email</th>
+                <th scope="col">profileimage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let resdata of gotData">
+                <tr>
+                    <th scope="row">{{resdata.firstname}}</th>
+                    <td>{{resdata.lastname}}</td>
+                    <td>{{resdata.email}}</td>
+                    <td>{{resdata.profileimage}}</td>
+                </tr>
+            </ng-container>
+
+        </tbody>
+    </table>
+
+</div>
