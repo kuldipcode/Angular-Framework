@@ -12,9 +12,17 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ProfileComponent implements OnInit {
 
   constructor(private httpClient: HttpClient) { }
-  user = { name: 'John Doe' };
+  user = {
+    "firstname": "Kuldipkumar",
+    "lastname": "Prajapati",
+    "email": "kuldip.de@gmail.com",
+    "profileimage": "pat"
+  };
   isEditing = false;
-  editedName: string;
+  editedfname: string;
+  editedlname: string;
+  editedemail: string;
+  editedpi: string;
   data: any;
   gotData: any;
   patchedData: any;
@@ -27,12 +35,18 @@ export class ProfileComponent implements OnInit {
   toggleEdit(): void {
     this.isEditing = !this.isEditing;
     if (this.isEditing) {
-      this.editedName = this.user.name; // Initialize editedName with current name value
+      this.editedfname = this.user.firstname;
+      this.editedlname = this.user.lastname; 
+      this.editedemail = this.user.email; 
+      this.editedpi = this.user.profileimage;  // Initialize editedName with current name value
     }
   }
 
   saveEdit(): void {
-    this.user.name = this.editedName; // Update user name with edited value
+    this.user.firstname = this.editedfname; // Update user name with edited value
+    this.user.lastname = this.editedlname;
+    this.user.email = this.editedemail;
+    this.user.profileimage = this.editedpi;
     this.isEditing = false;
   }
   sendGetRequest(): Observable<any> {
@@ -44,6 +58,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.sendGetRequest().subscribe(
       res => {
+        this.user = res.message;
         this.gotData = [res.message];
         console.log(this.gotData);
       }
