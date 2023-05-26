@@ -9,12 +9,26 @@
             </tr>
         </thead>
         <tbody>
-            <ng-container *ngFor="let resdata of gotData">
+            <ng-container *ngFor="let user of gotData">
                 <tr>
-                    <th scope="row">{{resdata.firstname}}</th>
-                    <td>{{resdata.lastname}}</td>
-                    <td>{{resdata.email}}</td>
-                    <td>{{resdata.profileimage}}</td>
+                    <th scope="row">{{user.firstname}}
+                        <span *ngIf="!user.isEditing">{{ user.firstname }}</span>
+                        <input *ngIf="user.isEditing" [(ngModel)]="user.name" />
+                    </th>
+                    <td>{{user.lastname}}
+                        <span *ngIf="!user.isEditing">{{ user.name }}</span>
+                        <input *ngIf="user.isEditing" [(ngModel)]="user.name" />
+                    </td>
+                    <td>{{user.email}}
+                        <span *ngIf="!user.isEditing">{{ user.email }}</span>
+                        <input *ngIf="user.isEditing" [(ngModel)]="user.name" />
+                    </td>
+                    <td>{{user.profileimage}}
+                        <span *ngIf="!user.isEditing">{{ user.profileimage }}</span>
+                        <input *ngIf="user.isEditing" [(ngModel)]="user.name" />
+                    </td>
+                    <button *ngIf="!isEditing" (click)="toggleEdit()">Edit</button>
+                    <button *ngIf="isEditing" (click)="saveEdit()">Save</button>
                 </tr>
             </ng-container>
 
