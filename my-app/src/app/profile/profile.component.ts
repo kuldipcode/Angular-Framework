@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
+import {map} from 'rxjs/operators'
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 
@@ -23,19 +24,19 @@ export class ProfileComponent implements OnInit {
     return this.httpClient.get<any>(this.Url);
 }
 sendPatchRequest(data: any): Observable<any> {
-  return this.httpClient.post<any>(this.Url, data);
+  return this.httpClient.patch<any>(this.Url, data);
 }
   ngOnInit() {
     this.sendGetRequest().subscribe(
       res => {
-        this.gotData = res.message;
+        this.gotData = [res.message];
         console.log(this.gotData);
       }
 );
 this.data = {
   "firstname": "Kuldipkumar",
   "lastname": "Prajapati",
-  "email": "kuldip.code@gmail.com",
+  "email": "kuldip.de@gmail.com",
   "profileimage": "pat"
 };
 this.sendPatchRequest(this.data).subscribe(
