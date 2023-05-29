@@ -18,7 +18,7 @@ interface UserModel {
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  user : UserModel;
+  private user : UserModel;
 
   constructor(private httpClient: HttpClient) { }
   
@@ -27,9 +27,9 @@ export class ProfileComponent implements OnInit {
   editedlname: string;
   editedemail: string;
   editedpi: string;
-  data: any;
+  private data: any;
   gotData: any;
-  patchedData: any;
+  private patchedData: any;
 
   private Url = 'http://localhost:3000/api/user/profile';
   private httpOptions = {
