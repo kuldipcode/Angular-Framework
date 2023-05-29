@@ -11,11 +11,11 @@
                    
                    
                         <span *ngIf="!isEditing">{{ user.email }}</span>
-                        <input *ngIf="isEditing" [(ngModel)]="user.email" />
+                        <input *ngIf="isEditing" [(ngModel)]="editedemail" />
                    
                    
                         <span *ngIf="!isEditing">{{ user.profileimage }}</span>
-                        <input *ngIf="isEditing" [(ngModel)]="user.profileimage" />
+                        <input *ngIf="isEditing" [(ngModel)]="editedpi" />
                    
                     <button *ngIf="!isEditing" (click)="toggleEdit()">Edit</button>
                     <button *ngIf="isEditing" (click)="saveEdit()">Save</button>
