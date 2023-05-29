@@ -1,38 +1,26 @@
-<div class="contaner mt-5" >
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th scope="col">firstname</th>
-                <th scope="col">lastname</th>
-                <th scope="col">email</th>
-                <th scope="col">profileimage</th>
-            </tr>
-        </thead>
-        <tbody>
-            <ng-container *ngFor="let user of gotData">
-                <tr>
-                    <th scope="row">{{user.firstname}}
-                        <span *ngIf="!user.isEditing">{{ user.firstname }}</span>
-                        <input *ngIf="user.isEditing" [(ngModel)]="user.name" />
-                    </th>
-                    <td>{{user.lastname}}
-                        <span *ngIf="!user.isEditing">{{ user.name }}</span>
-                        <input *ngIf="user.isEditing" [(ngModel)]="user.name" />
-                    </td>
-                    <td>{{user.email}}
-                        <span *ngIf="!user.isEditing">{{ user.email }}</span>
-                        <input *ngIf="user.isEditing" [(ngModel)]="user.name" />
-                    </td>
-                    <td>{{user.profileimage}}
-                        <span *ngIf="!user.isEditing">{{ user.profileimage }}</span>
-                        <input *ngIf="user.isEditing" [(ngModel)]="user.name" />
-                    </td>
+<div class="container mt-5" >
+   
+            <div *ngFor="let user of gotData">
+                
+            
+                        <span *ngIf="!isEditing">{{ user.firstname }}</span>
+                        <input *ngIf="isEditing" [(ngModel)]="editedfname" />
+                
+                        <span *ngIf="!isEditing">{{ user.lastname }}</span>
+                        <input *ngIf="isEditing" [(ngModel)]="editedlname" />
+                   
+                   
+                        <span *ngIf="!isEditing">{{ user.email }}</span>
+                        <input *ngIf="isEditing" [(ngModel)]="user.email" />
+                   
+                   
+                        <span *ngIf="!isEditing">{{ user.profileimage }}</span>
+                        <input *ngIf="isEditing" [(ngModel)]="user.profileimage" />
+                   
                     <button *ngIf="!isEditing" (click)="toggleEdit()">Edit</button>
                     <button *ngIf="isEditing" (click)="saveEdit()">Save</button>
-                </tr>
-            </ng-container>
+                
+            </div>
 
-        </tbody>
-    </table>
 
 </div>
