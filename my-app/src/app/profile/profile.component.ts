@@ -32,8 +32,12 @@ export class ProfileComponent implements OnInit {
   private patchedData: any;
 
   private Url = 'http://localhost:3000/api/user/profile';
+  getToken():any{
+    return sessionStorage.getItem('token');
+  }
+  private token = this.getToken()
   private httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json', 'authorization': this.token })
   };
 
   toggleEdit(): void {
@@ -50,10 +54,10 @@ export class ProfileComponent implements OnInit {
 
 
   sendGetRequest(): Observable<any> {
-    return this.httpClient.get<any>(this.Url);
+    return this.httpClient.get<any>(this.Url, this.httpOptions);
   }
   sendPatchRequest(data: any): Observable<any> {
-    return this.httpClient.patch<any>(this.Url, data);
+    return this.httpClient.patch<any>(this.Url, data, this.httpOptions);
   }
   ngOnInit() {
     this.sendGetRequest().subscribe(
