@@ -40,7 +40,7 @@ jobs:
   uses: easingthemes/ssh-deploy@v2.1.5
   with:
     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY}}
-    SOURCE: "dist/angular-demo/"
-    REMOTE_HOST: "ec2-remote-host"
+    SOURCE: "dist/my-app/"
+    REMOTE_HOST: "ec2-65-0-101-128.ap-south-1.compute.amazonaws.com"
     REMOTE_USER: "ubuntu"
-    TARGET: "/var/www/html/angular-demo/"
+    TARGET: "/var/www/html/my-app/"
