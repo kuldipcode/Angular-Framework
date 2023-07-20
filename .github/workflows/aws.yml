@@ -2,9 +2,11 @@ name: Deploy to Amazon EC2
 
 on:
   pull_request:
-    branches: [main]
+    branches:
+    - main
   push:
-    branches: [dev]
+    branches:
+    - dev
 jobs:
   build: 
     name: Build
