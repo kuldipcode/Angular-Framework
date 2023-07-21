@@ -1,0 +1,26 @@
+<div class="container mt-5" >
+   
+            <div *ngFor="let user of gotData">
+                
+            
+                        <span *ngIf="!isEditing">{{ user.firstname }}</span>
+                        <input *ngIf="isEditing" [(ngModel)]="editedfname" />
+                
+                        <span *ngIf="!isEditing">{{ user.lastname }}</span>
+                        <input *ngIf="isEditing" [(ngModel)]="editedlname" />
+                   
+                   
+                        <span *ngIf="!isEditing">{{ user.email }}</span>
+                        <input *ngIf="isEditing" [(ngModel)]="editedemail" />
+                   
+                   
+                        <span *ngIf="!isEditing">{{ user.profileimage }}</span>
+                        <input *ngIf="isEditing" [(ngModel)]="editedpi" />
+                   
+                    <button *ngIf="!isEditing" (click)="toggleEdit()">Edit</button>
+                    <button *ngIf="isEditing" (click)="saveEdit()">Save</button>
+                
+            </div>
+
+
+</div>
