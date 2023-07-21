@@ -40,7 +40,8 @@ export class LoginComponent implements OnInit {
     this.sendPostRequest(data).subscribe(
       res => {
         this.resdata = res;
-        console.log(res);
+        let token = res.message.token;
+        sessionStorage.setItem('token',token);
         this.router.navigate(['../profile'], { relativeTo: this.route });
       }
 );
